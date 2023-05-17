@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "303368774121",
+    "project_id": "chruchv2",
+    "storage_bucket": "chruchv2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303368774121:android:5c1623b3f437d09591eb78",
+        "android_client_info": {
+          "package_name": "com.example.modernlogintute"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "303368774121-skguo2g3o8c9799mnk397k529s99p3kk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhQ5N7RfYPJdu3xr3MJNqOYoqzkS44ZQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "303368774121-skguo2g3o8c9799mnk397k529s99p3kk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
