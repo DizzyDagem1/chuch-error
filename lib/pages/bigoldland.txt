@@ -1,0 +1,55 @@
+ body: SingleChildScrollView(
+  child: Column(
+    children: [
+      SizedBox(
+        height: MediaQuery.of(context).size.height * 0.7, // Adjust the height as needed
+        child: _items.isNotEmpty
+            ? ListView.builder(
+                physics: NeverScrollableScrollPhysics(), // Disable scrolling in ListView.builder
+                shrinkWrap: true,
+                itemCount: _items.length,
+                itemBuilder: (context, index) {
+                  return Container();
+                },
+              )
+            : ElevatedButton(
+                onPressed: () {
+                  readJson();
+                },
+                child: Center(child: Text("Load")),
+              ),
+      ),
+      ListTile(
+        leading: Text(
+          _items.isNotEmpty && book < _items.length ? _items[book]["title"] : "",
+        ),
+        subtitle: Text(
+          _items.isNotEmpty && book < _items.length
+              ? "${chapter < _items[book]["chapters"].length ? Chapter.fromJson(_items[book]["chapters"][chapter - 1]).verses?.join(" ") : ""}"
+              : "",
+        ),
+      ),
+      SizedBox(height: 20), // Add spacing between the text fields and buttons
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: TextField(
+          controller: chapterController,
+          decoration: InputDecoration(
+            border: OutlineInputBorder(),
+            hintText: "Enter your Chapter!",
+          ),
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: TextField(
+          controller: bookController,
+          decoration: InputDecoration(
+            border: OutlineInputBorder(),
+            hintText: "Enter your Book! (as in a numbered list)",
+          ),
+        ),
+      ),
+    ],
+  ),
+),

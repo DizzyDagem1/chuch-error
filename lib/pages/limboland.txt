@@ -1,4 +1,18 @@
-TextField(decoration: InputDecoration(
-                    border: const OutlineInputBorder(),
-                    hintText: "Enter your Book!",)
-                    ),
+
+                          leading: Text(_items[book - 1]["title"]),
+                          title: Text(_items[book - 1]["chapters"][chapter - 1]
+                              ["title"]),
+                          subtitle: Text(
+                            Chapter(
+                              chapter: "$chapter",
+                              title: "$chapter",
+                              verses: _items[book - 1]["chapters"][chapter - 1]
+                                      ["verses"]
+                                  .cast<String>(),
+                            ).toString(),
+                          ),
+
+                           leading: Text(
+                              "${index < _items[index]["chapters"].length ? Chapter.fromJson(_items[index]["chapters"][index]).verses?.join("") : ""}"),
+                        ),
+                        "${chapter < _items[index]["chapters"].length ? Chapter.fromJson(_items[book]["chapters"][chapter - 1]).verses?.join(" ") : ""}"
